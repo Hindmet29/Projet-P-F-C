@@ -1,5 +1,6 @@
 import random#importation module
 print ( "Bienvenue dans le jeu Pierre Feuille Ciseaux !" )
+#affichage des règles du jeu 
 print ( "Les règles du jeu Pierre - Feuille - Ciseaux sont les suivantes." )
 print ( "La pierre casse les ciseaux : la pierre gagne." )
 print ( "Les ciseaux coupent la feuille : les ciseaux gagnent." )
@@ -11,25 +12,22 @@ joueur_victoires=0
 ordi_victoires = 0
 nuls= 0 
 
-#joueur_victoires = 0
-#ordi_victoires = 0
-#nuls = 0
 fin_score = 2#nombre de points qu'il faut pour gagner
 selection_lettres = ["p", "c", "f", "q"]
 fin  = False
 
 print ( "Le premier qui marque",fin_score,"points gagne la partie" )
 
-while not fin:
+while not fin:#boucle ,exécuter minimum une fois 
     
     print(nom," : ",joueur_victoires,"Egalités:",nuls,"Ordi:",ordi_victoires)#affichage du score  
-    joueur = input(nom + " choisissiez (p)ierre , (f)euille , (c)iseaux ou (q)uitter: ")
+    joueur = input(nom + " choisissiez (p)ierre , (f)euille , (c)iseaux ou (q)uitter: ")#choix du joueur
     print(joueur)
     if joueur =="q":#instruction qui permet de quitter le jeu si le joueur entre la lettre (q)uitter
         fin=True
         print(" Vous avez quitté le jeu")        
     else:
-        ordi = random.randint(1, 3)#randit permet d'insérer les valeurs
+        ordi = random.randint(1, 3)#randit permet d'insérer les valeurs qui permet de les associer aux lettres p,c,f
         #choix de l'odinateur 
         if ordi==1:
             print("l'ordi a fait pierre")
@@ -37,8 +35,9 @@ while not fin:
             print("l'ordi a fait feuille")
         else:
             print("l'ordi a fait ciseaux")
-    if joueur not in selection_lettres:#si le joueur entre un caractère qui n'est pas ,p,c,f ou q ,il quitte le jeu
+    if joueur not in selection_lettres:#si le joueur entre un caractère qui n'est pas p,c,f ou q ,il quitte le jeu
         fin=True
+        #message d'erreur 
         print ( "###########" )
         print ( "## ERROR ##" )
         print ( "###########" )
@@ -52,4 +51,3 @@ while not fin:
     elif joueur == "p" and ordi == 2 or  joueur == "c" and ordi == 1 or joueur == "f" and ordi == 3:
         print("vous avez perdu")
         ordi_victoires=ordi_victoires + 1#rajoute 1 point a la variable ordi_victoires
-        
