@@ -6,3 +6,4 @@ essayer de faire choisir le joueur entre (pierre,feuille,ciseaux ou quitter)
 -17/01: Suite du programme 
 essayer de  créer une instruction qui rajoute 1 point au score du joueur , de l'ordinateur et lorsqu'il y  a égalités , avec les variables joueur_victoires ,ordi_victoires et nuls .
 -18/01: réaliser une instruction afin que quand le joueur rentre un caractères qui n'est autre que (p,c,f ou q ),le joueur quitte le jeu est un message d'erreur apparait  
+-19/01:j'ai corriger mes erreus et les bug 
