@@ -1,0 +1,7 @@
+-16/01:Debu t du projet ,mise en place des idé
+Mise en place des règles du jeu 
+--------
+essayer de faire une boucle avce le module random 
+essayer de faire choisir le joueur entre (pierre,feuille,ciseaux ou quitter)
+-17/01: Suite du programme 
+essayer de  créer une instruction qui rajoute 1 point au score du joueur , de l'ordinateur et lorsqu'il y  a égalités , avec les variables joueur_victoires ,ordi_victoires et nuls .
