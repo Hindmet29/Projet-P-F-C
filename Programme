@@ -35,7 +35,7 @@ while not fin:#boucle ,exécuter minimum une fois
             print("l'ordi a fait feuille")
         else:
             print("l'ordi a fait ciseaux")
-    if joueur not in selection_lettres:#si le joueur entre un caractère qui n'est pas p,c,f ou q ,il quitte le jeu
+    if joueur not in selection_lettres: #si le joueur entre un caractère qui n'est pas p,c,f ou q ,il quitte le jeu
         fin=True
         #affichage message d'erreur 
         print ( "###########" )
@@ -47,7 +47,7 @@ while not fin:#boucle ,exécuter minimum une fois
         nuls=nuls + 1 #rajoute 1 point a la variable nuls  
     elif joueur == "p" and ordi == 3 or joueur == "c" and ordi == 2 or joueur == "f" and ordi == 1:
         print("vous avez gagné")
-        joueur_victoires=joueur_victoires+1#rajoute 1 point a la variable joueur_victoires
+        joueur_victoires=joueur_victoires+1 #rajoute 1 point a la variable joueur_victoires
     elif joueur == "p" and ordi == 2 or  joueur == "c" and ordi == 1 or joueur == "f" and ordi == 3:
         print("vous avez perdu")
-        ordi_victoires=ordi_victoires + 1#rajoute 1 point a la variable ordi_victoires
+        ordi_victoires=ordi_victoires + 1 #rajoute 1 point a la variable ordi_victoires
