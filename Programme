@@ -23,7 +23,7 @@ while not fin:#boucle ,exécuter minimum une fois
     print(nom," : ",joueur_victoires,"Egalités:",nuls,"Ordi:",ordi_victoires)#affichage du score  
     joueur = input(nom + " choisissiez (p)ierre , (f)euille , (c)iseaux ou (q)uitter: ")#choix du joueur
     print(joueur)
-    if joueur =="q":#instruction qui permet de quitter le jeu si le joueur entre la lettre (q)uitter
+    if joueur =="q":#si le joueur entre la lettre (q)uitter ,il quitte le jeu 
         fin=True
         print(" Vous avez quitté le jeu")        
     else:
@@ -37,7 +37,7 @@ while not fin:#boucle ,exécuter minimum une fois
             print("l'ordi a fait ciseaux")
     if joueur not in selection_lettres:#si le joueur entre un caractère qui n'est pas p,c,f ou q ,il quitte le jeu
         fin=True
-        #message d'erreur 
+        #affichage message d'erreur 
         print ( "###########" )
         print ( "## ERROR ##" )
         print ( "###########" )
