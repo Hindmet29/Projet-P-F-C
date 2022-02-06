@@ -1,6 +1,6 @@
 import random#importation module
 print ( "Bienvenue dans le jeu Pierre Feuille Ciseaux !" )
-#affichage des règles du jeu 
+#affichage des règles du jeu
 print ( "Les règles du jeu Pierre - Feuille - Ciseaux sont les suivantes." )
 print ( "La pierre casse les ciseaux : la pierre gagne." )
 print ( "Les ciseaux coupent la feuille : les ciseaux gagnent." )
@@ -11,73 +11,65 @@ nom=input("Saisir votre prénom:")
 
 joueur_victoires=0
 ordi_victoires = 0
-nuls= 0 
+nuls= 0
 
 selection_lettres = ["p", "c", "f", "q"]
-fin  = False
+fin  = False
 
-#demander le nombre de manches 
-joueur_nbr_round  =  int ( input ( 'Combien de manches ? ' ))
-nbr_round  =  0
-while ( nbr_round  <  joueur_nbr_round ):
-    
-    while not fin:#boucle ,exécuter minimum une fois
-        
-        print(nom," : ",joueur_victoires,"Egalités:",nuls,"Ordi:",ordi_victoires)#affichage du score  
-        joueur = input(nom + " choisissiez (p)ierre , (f)euille , (c)iseaux ou (q)uitter: ")#choix du joueur
-        print(joueur)
-        
-        
-        if joueur =="q":#si le joueur entre la lettre (q)uitter ,il quitte le jeu 
-           fin=True
-           print(" Vous avez quitté le jeu")
-           
-        
-        else:
-            ordi = random.randint(1, 3)#randit permet d'insérer les valeurs qui permet de les associer aux lettres p,c,f
-            #choix de l'odinateur   
-            if ordi==1:
-                print("l'ordi a fait pierre")
-            elif ordi==2:
-                print("l'ordi a fait feuille")
-            else:
-                print("l'ordi a fait ciseaux")
-                           
-                    
-        if joueur not in selection_lettres: #si le joueur entre un caractère qui n'est pas p,c,f ou q ,il quitte le jeu
-           fin=True
-           #affichage message d'erreur 
-           print ( "###########" )
-           print ( "## ERROR ##" )
-           print ( "###########" )
-           
-            
-           
+#demander le nombre de manches
+joueur_nbr_round  =  int ( input ( 'Combien de manches ? ' ))
+nbr_round  =  0
 
-        if joueur == "p" and ordi == 1 or joueur == "c" and ordi == 3 or joueur == "f" and ordi == 2:
-            print("#match nul#")
-            nuls = nuls + 1 #rajoute 1 point a la variable nuls  
-        elif joueur == "p" and ordi == 3 or joueur == "c" and ordi == 2 or joueur == "f" and ordi == 1:
-            print("#vous avez gagné#")
-            joueur_victoires = joueur_victoires+1 #rajoute 1 point a la variable joueur_victoires
-        elif joueur == "p" and ordi == 2 or  joueur == "c" and ordi == 1 or joueur == "f" and ordi == 3:
-            print("#vous avez perdu#")
-            ordi_victoires = ordi_victoires + 1 #rajoute 1 point a la variable ordi_victoires
-            
-        nbr_round = nbr_round + 1
-        print ( 'Manche numéro' , nbr_round , 'sur ' , joueur_nbr_round )#affichage du nombre de manche a chaque manche
-        break
-        
+    
+while not fin and ( nbr_round  <  joueur_nbr_round ):#boucle ,exécuter minimum une fois
+    print(nom," : ",joueur_victoires,"Egalités:",nuls,"Ordi:",ordi_victoires)#affichage du score
+    joueur = input(nom + " choisissiez (p)ierre , (f)euille , (c)iseaux ou (q)uitter: ")#choix du joueur
+    print(joueur)
+    
+    if joueur =="q":#si le joueur entre la lettre (q)uitter ,il quitte le jeu
+       fin=True
+       print(" Vous avez quitté le jeu")
+    else:
+        ordi = random.randint(1, 3)#randit permet d'insérer les valeurs qui permet de les associer aux lettres p,c,f
+        #choix de l'odinateur
+        if ordi==1:
+            print("l'ordi a fait pierre")
+        elif ordi==2:
+            print("l'ordi a fait feuille")
+        else:
+            print("l'ordi a fait ciseaux")
+            
+    if joueur not in selection_lettres: #si le joueur entre un caractère qui n'est pas p,c,f ou q ,il quitte le jeu
+       fin=True
+       #affichage message d'erreur
+       print ( "###########" )
+       print ( "## ERROR ##" )
+       print ( "###########" )
+       
+
+    if joueur == "p" and ordi == 1 or joueur == "c" and ordi == 3 or joueur == "f" and ordi == 2:
+        print("#match nul#")
+        nuls = nuls + 1 #rajoute 1 point a la variable nuls
+    elif joueur == "p" and ordi == 3 or joueur == "c" and ordi == 2 or joueur == "f" and ordi == 1:
+        print("#vous avez gagné#")
+        joueur_victoires = joueur_victoires+1 #rajoute 1 point a la variable joueur_victoires
+    elif joueur == "p" and ordi == 2 or  joueur == "c" and ordi == 1 or joueur == "f" and ordi == 3:
+        print("#vous avez perdu#")
+        ordi_victoires = ordi_victoires + 1 #rajoute 1 point a la variable ordi_victoires
+    nbr_round = nbr_round + 1
+    print ( 'Manche numéro' , nbr_round , 'sur ' , joueur_nbr_round )#affichage du nombre de manche a chaque manche
+    
+    
 #détermine qui a gagné
-print('------------------------------------------')        
+print('------------------------------------------')
 print ( 'Tu as ' , joueur_victoires , ' points')
 print('------------------------------------------')
 print ( 'L \' ordi a ' , ordi_victoires , ' points')
 print('------------------------------------------')
 
-if ( joueur_victoires  >  ordi_victoires ):
-    print ( 'Partie finie sur une victoire pour'  , nom ,'et une défaite pour ordi:) ')
-elif ( joueur_victoires  <  ordi_victoires ):
-    print ( 'Partie finie sur une défaite pour ',nom,'et une victoire pour ordi :(' )
-elif ( joueur_victoires  == ordi_victoires ):
-    print ( 'Partie finie sur une égalité :/' )        
+if ( joueur_victoires  >  ordi_victoires ):
+    print ( 'Partie finie sur une victoire pour'  , nom ,'et une défaite pour ordi:) ')
+elif ( joueur_victoires  <  ordi_victoires ):
+    print ( 'Partie finie sur une défaite pour ',nom,'et une victoire pour ordi :(' )
+elif ( joueur_victoires  == ordi_victoires ):
+    print ( 'Partie finie sur une égalité :/' )
